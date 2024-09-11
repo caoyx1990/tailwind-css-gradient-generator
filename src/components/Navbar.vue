@@ -69,7 +69,7 @@ const toggleTheme = () => {
                 </router-link>
             </h1>
             <ul class="flex items-center text-base justify-center w-full md:w-auto space-x-4">
-                <li class="relative z-50">
+                <!-- <li class="relative z-50">
                     <Menu as="div" class="relative inline-block text-left">
                         <MenuButton class="py-1.5 px-3 border border-gray-200 rounded-lg dark:text-slate-50"
                             >Feedback</MenuButton
@@ -105,8 +105,8 @@ const toggleTheme = () => {
                             </MenuItem>
                         </MenuItems>
                     </Menu>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <a
                         aria-label="GitHub Respository"
                         href="https://github.com/caoyx1990/tailwind-css-gradient-generator"
@@ -124,7 +124,7 @@ const toggleTheme = () => {
                             ></path>
                         </svg>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <button type="button" class="flex" title="Toggle theme" @click="toggleTheme">
                         <svg
