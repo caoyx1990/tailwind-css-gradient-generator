@@ -40,13 +40,13 @@
         "not dead"
     ],
     "bugs": {
-        "url": "https://github.com/roberthgnz/tailwind-gradient-generator/issues"
+        "url": "https://github.com/caoyx1990/tailwind-css-gradient-generator/issues"
     },
-    "homepage": "https://github.com/roberthgnz/tailwind-gradient-generator#readme",
+    "homepage": "https://github.com/caoyx1990/tailwind-css-gradient-generator#readme",
     "keywords": [],
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/roberthgnz/tailwind-gradient-generator.git"
+        "url": "git+https://github.com/caoyx1990/tailwind-css-gradient-generator.git"
     }
 }

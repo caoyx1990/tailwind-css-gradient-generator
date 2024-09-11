@@ -83,7 +83,7 @@ const toggleTheme = () => {
                                         active ? 'font-semibold' : 'text-gray-900',
                                         'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                     ]"
-                                    href="https://tailwind-gradient-generator.canny.io/feature-requests"
+                                    href="https://tailwind-gradient-generator.com/feature-requests"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -96,7 +96,7 @@ const toggleTheme = () => {
                                         active ? 'font-semibold' : 'text-gray-900',
                                         'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                     ]"
-                                    href="https://github.com/roberthgnz/tailwind-gradient-generator/issues/new"
+                                    href="https://github.com/caoyx1990/tailwind-css-gradient-generator/issues/new"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -109,7 +109,7 @@ const toggleTheme = () => {
                 <li>
                     <a
                         aria-label="GitHub Respository"
-                        href="https://github.com/roberthgnz/tailwind-gradient-generator"
+                        href="https://github.com/caoyx1990/tailwind-css-gradient-generator"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
