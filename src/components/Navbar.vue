@@ -42,7 +42,7 @@ const toggleTheme = () => {
         <nav
             class="container mx-auto py-4 px-4 xl:px-0 flex items-center justify-between flex-wrap md:flex-row md:flex-nowrap"
         >
-            <h1 class="flex justify-center md:justify-start w-full space-x-2">
+            <h1 title="Tailwind Gradient Generator" class="flex justify-center md:justify-start w-full space-x-2">
                 <svg
                     class="w-8 h-8"
                     viewBox="0 0 256 154"
