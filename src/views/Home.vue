@@ -1,5 +1,5 @@
 <template>
-    <div class="relative h-[var(--content-height)]">
+    <!-- <div class="relative h-[var(--content-height)]">
         <div class="h-full grid md:grid-cols-2 container mx-auto px-4 xl:px-0 mb-32">
             <div class="h-full overflow-y-auto flex flex-col gap-4 p-4">
                 <GradientSelector stop="from" :title="'Starting color'" :colors="colors" :color="stop.from.color"
@@ -37,6 +37,91 @@
                 </div>
             </Background>
         </div>
+    </div> -->
+    <div class="relative">
+        <Background>
+            <div class="h-full flex flex-col container mx-auto px-4 xl:px-0 mb-32">
+                <div class="space-y-4 w-full rounded mb-8">
+                    <div ref="gradientContainer" class="relative rounded-lg h-[33.33vh]" :class="classes">
+                        <DirectionController :direction="direction" @click="handleDirection">
+                            <button type="button" title="Generate random gradient" @click="generateRandomGradient">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-refresh-cw">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15">
+                                    </path>
+                                </svg>
+                            </button>
+                        </DirectionController>
+                    </div>
+                    <div class="flex flex-col xl:flex-row flex-wrap items-center w-full justify-center gap-2">
+                        <ClassOutput :value="classes" :direction="direction" @click="copyClasses" />
+                        <!-- <ShareButton :direction="direction" :stop="stop" /> -->
+                    </div>
+                </div>
+                
+                <div class="flex flex-col gap-4">
+                    <!-- Wrapper for all selectors and history box -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Starting color -->
+                        <div class="w-full">
+                        <GradientSelector 
+                            stop="from" 
+                            :title="'Starting color'" 
+                            :colors="colors" 
+                            :color="stop.from.color"
+                            :shade="stop.from.shade" 
+                            :target="target" 
+                            @color-selected="handleColorStop"
+                            @shade-selected="handleColorShade" 
+                            @stop-position-changed="handleStopPosition" 
+                        />
+                        </div>
+
+                        <!-- Ending color -->
+                        <div class="w-full">
+                        <GradientSelector 
+                            stop="to" 
+                            :title="'Ending color'" 
+                            :colors="colors" 
+                            :color="stop.to.color"
+                            :shade="stop.to.shade" 
+                            :target="target" 
+                            @color-selected="handleColorStop"
+                            @shade-selected="handleColorShade" 
+                            @stop-position-changed="handleStopPosition" 
+                        />
+                        </div>
+
+                        <!-- Middle color -->
+                        <div class="w-full">
+                        <GradientSelector 
+                            stop="via" 
+                            :title="'Middle color'" 
+                            :colors="colors" 
+                            :color="stop.via.color"
+                            :shade="stop.via.shade" 
+                            :target="target" 
+                            @color-selected="handleColorStop"
+                            @shade-selected="handleColorShade" 
+                            @stop-position-changed="handleStopPosition" 
+                        />
+                        </div>
+
+                        <!-- History Box -->
+                        <div class="w-full">
+                        <HistoryBox 
+                            :history="history" 
+                            @edit="handleGradient" 
+                            @remove="removeClasses" 
+                        />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Background>
     </div>
 </template>
 
@@ -57,13 +142,13 @@ import Background from '../components/Background.vue'
 export default {
     name: 'Home',
     components: {
-        DirectionController,
-        GradientSelector,
-        HistoryBox,
-        ClassOutput,
-        ShareButton,
-        Background,
-    },
+    DirectionController,
+    GradientSelector,
+    ClassOutput,
+    ShareButton,
+    Background,
+    HistoryBox
+},
     data() {
         return {
             gradient: '',

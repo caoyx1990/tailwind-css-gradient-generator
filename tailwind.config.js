@@ -57,6 +57,10 @@ module.exports = {
             fontFamily: {
                 sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
             },
+            // screens: {
+            //     'sm': '0px',
+            //     'lg': '900px',
+            // },
         },
     },
     plugins: [],

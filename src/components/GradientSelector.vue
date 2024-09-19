@@ -1,8 +1,8 @@
 <template>
     <div class="rounded-lg w-full border bg-white dark:border-gray-700 dark:bg-gray-900 p-4 text-center space-y-4">
         <h3 class="text-gray-800 font-semibold dark:text-white text-lg">{{ title }} ({{ stop }})</h3>
-        <div class="flex gap-8">
-            <div class="space-y-2">
+        <div class="flex flex-col sm:flex-row gap-4">
+            <div class="space-y-2 w-full sm:w-auto">
                 <p v-if="stop" class="text-slate-400 font-normal dark:text-white uppercase text-sm">{{ selected }}</p>
                 <ul class="grid grid-cols-5 gap-2 uppercase">
                     <li
@@ -24,17 +24,32 @@
                     </li>
                 </ul>
             </div>
-            <GradientShadeSelector
-                v-if="!noShadeAvailable.includes(selected)"
-                :color="selected"
-                :shade="shade"
-                :selected-shade="selectedShade"
-                @click="({ shade }) => $emit('shade-selected', { stop, shade })"
-            />
-            <StopPositionSelector
-                :stop="stop"
-                @update:model-value="(position) => $emit('stop-position-changed', { stop, position })"
-            />
+            <!-- <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <GradientShadeSelector
+                    v-if="!noShadeAvailable.includes(selected)"
+                    :color="selected"
+                    :shade="shade"
+                    :selected-shade="selectedShade"
+                    @click="({ shade }) => $emit('shade-selected', { stop, shade })"
+                />
+                <StopPositionSelector
+                    :stop="stop"
+                    @update:model-value="(position) => $emit('stop-position-changed', { stop, position })"
+                />
+            </div> -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <GradientShadeSelector
+                    v-if="!noShadeAvailable.includes(selected)"
+                    :color="selected"
+                    :shade="shade"
+                    :selected-shade="selectedShade"
+                    @click="({ shade }) => $emit('shade-selected', { stop, shade })"
+                />
+                <StopPositionSelector
+                    :stop="stop"
+                    @update:model-value="(position) => $emit('stop-position-changed', { stop, position })"
+                />
+            </div>
         </div>
     </div>
 </template>
